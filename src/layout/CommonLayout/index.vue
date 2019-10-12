@@ -1,19 +1,21 @@
 <template>
-  <div id="app">
+
+  <div class="common-layout">
     <transition :name="transformName">
-        <router-view></router-view>
+      <router-view class="aaaaa"></router-view>
     </transition>
   </div>
+
 </template>
 
 <script>
     import {mapGetters} from 'vuex'
 
     export default {
-        name: 'App',
+        name: "index",
         data() {
             return {
-                transitionName: ''
+
             }
         },
         computed: {
@@ -21,16 +23,13 @@
                 'transformName'
             ])
         },
-        components: {},
-        watch: {}
     }
 </script>
-<style lang="scss" scoped>
-  #app {
+
+<style scoped>
+  .common-layout {
     height: 100%;
     width: 100%;
-    position: relative;
-    overflow-x: hidden;
-    font-size: .32rem;
   }
+
 </style>

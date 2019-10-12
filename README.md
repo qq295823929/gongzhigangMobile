@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # gongzhigangmobile
 
 ## Project setup
@@ -27,3 +28,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+=======
+# gongzhigangMobile
+>>>>>>> 74554ce62a372a7ab8b8cb230b41d59b67117ad9

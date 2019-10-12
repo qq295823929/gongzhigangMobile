@@ -1,0 +1,146 @@
+.fold-left-enter-active {
+  animation-name: fold-left-in;
+  animation-duration: .15s;
+  position: absolute;
+}
+.fold-left-leave-active {
+  animation-name: fold-left-out;
+  animation-duration: .15s;
+  position: absolute;
+}
+.fold-right-enter-active {
+  animation-name: fold-right-in;
+  animation-duration: .15s;
+  position: absolute;
+}
+.fold-right-leave-active {
+  animation-name: fold-right-out;
+  animation-duration: .15s;
+  position: absolute;
+}
+@keyframes fold-left-in {
+  0% {
+    transform: translate(100%, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes fold-left-out {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+@keyframes fold-right-in {
+  0% {
+    transform: translate(-100%, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes fold-right-out {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(100%, 0);
+  }
+}
+//左右切换
+
+//.router-deep-enter-active,.router-back-enter-active{
+//  transition: all .4s ease;
+//}
+//.router-deep-enter{
+//  transform: translate(100%,0);
+//}
+//.router-deep-leave-to{
+//  transform: translate(-50%,0);
+//}
+//
+//.router-back-enter{
+//  transform: translate(-50%,0);
+//}
+//.router-back-leave-to{
+//  transform: translate(100%,0);
+//}
+//
+
+
+
+
+
+
+
+
+.router-deep-enter-active {
+  animation-name: router-deep-in;
+  animation-timing-function: ease;
+  animation-duration: .4s;
+  z-index: 20;
+  position: absolute!important;
+  border-left: 1px solid #e5e5e5;
+}
+.router-deep-leave-active {
+  animation-name: router-deep-out;
+  animation-timing-function: ease;
+  animation-duration: .4s;
+  position: absolute!important;
+  z-index: 10;
+}
+.router-back-enter-active {
+  animation-name: router-back-in;
+  animation-timing-function: ease;
+  animation-duration: .4s;
+  position: absolute!important;
+  z-index: 10;
+  border-left: 1px solid #e5e5e5;
+}
+.router-back-leave-active {
+  animation-name: router-back-out;
+  animation-timing-function: ease;
+  animation-duration: .4s;
+  position: absolute!important;
+  z-index: 20;
+}
+@keyframes router-deep-in {
+  0% {
+    transform: translate(100%, 0);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes router-deep-out {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-50%, 0);
+  }
+}
+@keyframes router-back-in {
+  0% {
+    transform: translate(-50%, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes router-back-out {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(100%, 0);
+  }
+}
+
