@@ -4,9 +4,6 @@ import NProgress from 'nprogress' // progress bar
 import 'nprogress/nprogress.css' // progress bar style
 import { Toast } from 'vant';
 
-import {
-  getSS,
-} from './utils/storage';
 
 
 NProgress.configure({showSpinner: false}) // NProgress Configuration
@@ -48,25 +45,25 @@ router.beforeEach(async (to, from, next) => {
   }
 
 
-  if(getSS('openId')===null){     //说明没有openId
-      next({name:'GetOpenId'})
-  }else{  //有openid;那就要看有没有用户信息,是否已经绑定了
-    if(getSS('userInfo')===null){   //说明没有用户信息
-      // console.log(getSS('openId'));
-      var userInfo=await store.dispatch('getUserInfo',getSS('openId'));
-
-      if(userInfo){ //这个人登录过了,
-        next()
-      }else {   //这个人没有登录
-        // next({name:''})
-        next({name:'NotBind',replace:true})     //没有绑定过,就直接去显示未绑定的页面
-      }
-
-    }else {       //说明有用户信息,那就把sessionstorage里面的用户信息读取到vuex里面
-      let userInfo=getSS('userInfo');
-      store.commit('updateUserInfo',JSON.parse(userInfo))
-    }
-  }
+  // if(getSS('openId')===null){     //说明没有openId
+  //     next({name:'GetOpenId'})
+  // }else{  //有openid;那就要看有没有用户信息,是否已经绑定了
+  //   if(getSS('userInfo')===null){   //说明没有用户信息
+  //     // console.log(getSS('openId'));
+  //     var userInfo=await store.dispatch('getUserInfo',getSS('openId'));
+  //
+  //     if(userInfo){ //这个人登录过了,
+  //       next()
+  //     }else {   //这个人没有登录
+  //       // next({name:''})
+  //       next({name:'NotBind',replace:true})     //没有绑定过,就直接去显示未绑定的页面
+  //     }
+  //
+  //   }else {       //说明有用户信息,那就把sessionstorage里面的用户信息读取到vuex里面
+  //     let userInfo=getSS('userInfo');
+  //     store.commit('updateUserInfo',JSON.parse(userInfo))
+  //   }
+  // }
 
   timer=setTimeout(function () {
     NProgress.start();

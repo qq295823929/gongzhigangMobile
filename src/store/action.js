@@ -1,4 +1,4 @@
-import {getWxApi} from '@/api/user/index'
+// import {getWxApi} from '@/api/user/index'
 import router from '../router/index'
 
 var actions = {
@@ -22,17 +22,6 @@ var actions = {
       })
     }))
   },
-  getSchoolInfo({commit}) {    //获取学校信息
-
-  },
-  updateUserInfo({commit}, data) {    //更新用户信息
-    commit("updateUserInfo", data)
-  },
-  clearUserInfo({commit}, data) { //清除所有用户信息
-    window.sessionStorage.removeItem('userInfo');
-    window.sessionStorage.removeItem('openId');
-    window.close();
-  }
 
 };
 

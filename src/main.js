@@ -6,7 +6,7 @@ import router from './router'
 import store from './store/index.js';
 import vant from 'vant'
 import 'vant/lib/index.css'
-import 'lib-flexible/flexible.js'
+// import 'lib-flexible/flexible.js'
 import './assets/Iconfont/iconfont.css'
 import './assets/Iconfont/iconfont.js'
 import './assets/common.scss'
@@ -18,11 +18,10 @@ Vue.config.productionTip = false;
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  store,
   router,
-  components: { App },
-  template: '<App/>'
-});
+  store,
+  render: h => h(App)
+}).$mount('#app');
 
 
 
